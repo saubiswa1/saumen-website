@@ -8,14 +8,14 @@ body {
 }
 
 header {
-    background: url('images/header.jpg') no-repeat center center/cover;
-    color: white;
+    background: url('header-bg.jpg') no-repeat center center/cover;
+    color: #fff;
+    padding: 2rem 0;
     text-align: center;
-    padding: 3rem 0;
     position: relative;
 }
 
-.header-content img {
+header img {
     border-radius: 50%;
     width: 150px;
     height: 150px;
@@ -24,7 +24,7 @@ header {
     transition: transform 0.3s ease-in-out;
 }
 
-.header-content img:hover {
+header img:hover {
     transform: scale(1.1);
 }
 
