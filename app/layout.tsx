@@ -1,31 +1,42 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
+import { siteMetadata } from '../site.config.mjs';
 import './globals.css';
 
-const title = 'Saumen Biswas — Quality Engineering & AI-Assisted Testing';
-const description = 'Saumen Biswas is a Senior SDET and GenAI quality engineering leader specializing in AI-assisted testing, automation platforms, reliability, engineering intelligence, and cloud efficiency.';
-
 export const metadata: Metadata = {
-  metadataBase: new URL('https://saubiswa1.github.io/saumen-website/'),
-  title,
-  description,
-  authors: [{ name: 'Saumen Biswas' }],
+  metadataBase: new URL(siteMetadata.canonicalUrl),
+  title: siteMetadata.title,
+  description: siteMetadata.description,
+  authors: [{ name: siteMetadata.author }],
+  alternates: { canonical: siteMetadata.canonicalUrl },
   openGraph: {
     type: 'website',
-    title,
-    description: 'Engineering systems that make quality, reliability, and delivery impact measurable.',
-    images: [{ url: 'og.png', width: 1200, height: 630, alt: 'Saumen Biswas — Quality engineering systems that make impact measurable.' }],
+    url: siteMetadata.canonicalUrl,
+    siteName: siteMetadata.author,
+    title: siteMetadata.title,
+    description: siteMetadata.socialDescription,
+    images: [{ url: siteMetadata.socialImage, width: 1200, height: 630, alt: siteMetadata.socialImageAlt }],
   },
   twitter: {
     card: 'summary_large_image',
-    title,
-    description: 'Engineering systems that make quality, reliability, and delivery impact measurable.',
-    images: ['og.png'],
+    title: siteMetadata.title,
+    description: siteMetadata.socialDescription,
+    images: [siteMetadata.socialImage],
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: siteMetadata.themeColor,
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteMetadata.personSchema).replace(/</g, '\\u003c') }}
+        />
+      </head>
       <body>{children}</body>
     </html>
   );
