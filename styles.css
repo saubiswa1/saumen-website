@@ -374,6 +374,19 @@ a {
     font-size: 0.86rem;
 }
 
+.location-line {
+    margin: 0.9rem 0 0;
+    color: var(--cyan);
+    font-size: 0.7rem;
+    font-weight: 850;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+.location-line + .availability {
+    margin-top: 0.45rem;
+}
+
 .availability::before {
     display: inline-block;
     width: 0.5rem;
@@ -784,6 +797,92 @@ a {
     color: #53320c;
 }
 
+.evidence-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.evidence-card {
+    min-height: 285px;
+    margin: 0;
+    padding: clamp(1.4rem, 3vw, 2rem);
+    display: flex;
+    flex-direction: column;
+    background: var(--navy-850);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+}
+
+.evidence-card h3 {
+    max-width: 18ch;
+    margin: 0.8rem 0 1.5rem;
+    font-size: clamp(1.35rem, 2.2vw, 1.8rem);
+    letter-spacing: -0.04em;
+    line-height: 1.08;
+}
+
+.evidence-list,
+.language-list {
+    display: grid;
+    gap: 0;
+    margin: auto 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.evidence-list li,
+.language-list li {
+    display: grid;
+    gap: 0.2rem;
+    padding-block: 0.9rem;
+    border-top: 1px solid var(--line);
+}
+
+.evidence-list strong,
+.language-list strong {
+    font-size: 0.86rem;
+}
+
+.evidence-list span,
+.language-list span {
+    color: var(--muted);
+    font-size: 0.72rem;
+}
+
+.testimonial-card {
+    background:
+        radial-gradient(circle at 90% 5%, rgba(255, 180, 84, 0.2), transparent 14rem),
+        var(--surface-strong);
+}
+
+.testimonial-card blockquote {
+    margin: auto 0 2rem;
+    font-size: clamp(1.45rem, 2.6vw, 2.15rem);
+    font-weight: 760;
+    letter-spacing: -0.045em;
+    line-height: 1.08;
+}
+
+.testimonial-card figcaption {
+    display: grid;
+    gap: 0.2rem;
+}
+
+.testimonial-card figcaption strong {
+    font-size: 0.84rem;
+}
+
+.testimonial-card figcaption span {
+    color: var(--muted);
+    font-size: 0.72rem;
+}
+
+.testimonial-card .text-link {
+    margin-top: 1rem;
+}
+
 .service-layout {
     display: grid;
     grid-template-columns: 0.7fr 1.3fr;
@@ -958,6 +1057,37 @@ a {
     display: block;
 }
 
+.human-details {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: clamp(3rem, 9vw, 8rem);
+    margin-top: clamp(4rem, 8vw, 7rem);
+    padding-top: clamp(2rem, 5vw, 4rem);
+    border-top: 1px solid var(--line);
+}
+
+.human-details h3 {
+    max-width: 17ch;
+    margin: 1rem 0;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    letter-spacing: -0.045em;
+    line-height: 1.05;
+}
+
+.human-details > div:first-child > p:last-child {
+    max-width: 62ch;
+    color: var(--muted);
+}
+
+.language-list {
+    margin-top: 0.5rem;
+}
+
+.language-list li {
+    grid-template-columns: 0.7fr 1.3fr;
+    align-items: baseline;
+}
+
 .education-block strong {
     font-size: 0.85rem;
 }
@@ -1043,8 +1173,18 @@ a {
     }
 
     .content-columns,
-    .about-layout {
+    .about-layout,
+    .human-details {
         grid-template-columns: 1fr;
+    }
+
+    .evidence-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .testimonial-card {
+        grid-column: 1 / -1;
+        min-height: 250px;
     }
 
     .talk-card {
@@ -1190,6 +1330,14 @@ a {
         grid-template-columns: 1fr;
     }
 
+    .evidence-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonial-card {
+        grid-column: auto;
+    }
+
     .recognition-card {
         min-height: 250px;
     }
@@ -1206,6 +1354,10 @@ a {
     .career-list strong,
     .career-list small {
         grid-column: 1;
+    }
+
+    .language-list li {
+        grid-template-columns: 1fr;
     }
 
     .footer-layout {

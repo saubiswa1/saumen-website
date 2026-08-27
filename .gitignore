@@ -160,6 +160,7 @@ cython_debug/
 node_modules/
 .pnpm-store/
 .next/
+.vinext/
 .wrangler/
 *.tsbuildinfo
 

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 const title = 'Saumen Biswas — Quality Engineering & AI-Assisted Testing';
-const description = 'Saumen Biswas is a quality engineering leader specializing in AI-assisted testing, automation platforms, reliability, engineering intelligence, and cloud efficiency.';
+const description = 'Saumen Biswas is a Senior SDET and GenAI quality engineering leader specializing in AI-assisted testing, automation platforms, reliability, engineering intelligence, and cloud efficiency.';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://saubiswa1.github.io/saumen-website/'),
