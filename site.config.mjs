@@ -5,7 +5,7 @@ export const siteMetadata = {
   title: 'Saumen Biswas — Quality Engineering & AI-Assisted Testing',
   description: 'Saumen Biswas is a Senior SDET and GenAI quality engineering leader specializing in AI-assisted testing, automation platforms, reliability, engineering intelligence, and cloud efficiency.',
   socialDescription: 'Engineering systems that make quality, reliability, and delivery impact measurable.',
-  socialImage: `${canonicalUrl}og.png`,
+  socialImage: `${canonicalUrl}og.jpg`,
   socialImageAlt: 'Saumen Biswas — Quality engineering systems that make impact measurable.',
   themeColor: '#07111f',
   author: 'Saumen Biswas',

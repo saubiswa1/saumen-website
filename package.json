@@ -6,7 +6,9 @@
     "node": ">=22.13.0"
   },
   "scripts": {
+    "predev": "node scripts/sync-social-image.mjs",
     "dev": "vinext dev",
+    "prebuild": "node scripts/sync-social-image.mjs",
     "build": "node scripts/validate-metadata.mjs && vinext build",
     "start": "vinext start",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
