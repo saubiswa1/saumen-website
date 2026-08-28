@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://saubiswa1.github.io/saumen-website/sitemap.xml

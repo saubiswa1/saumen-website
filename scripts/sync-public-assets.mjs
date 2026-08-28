@@ -3,6 +3,8 @@ import { copyFile } from 'node:fs/promises';
 const assets = [
   'og.jpg',
   'Saumen-Biswas-Resume.pdf',
+  'sitemap.xml',
+  'robots.txt',
 ];
 
 await Promise.all(assets.map((asset) => copyFile(

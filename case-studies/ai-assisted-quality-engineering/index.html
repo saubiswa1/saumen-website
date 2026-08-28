@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>document.documentElement.classList.add("has-js")</script>
+    <meta name="description" content="How Saumen Biswas combined intelligent test selection, reliability signals, and guarded self-healing automation to improve CI feedback and reduce flaky failures.">
+    <meta name="author" content="Saumen Biswas">
+    <meta name="theme-color" content="#07111f">
+    <link rel="canonical" href="https://saubiswa1.github.io/saumen-website/case-studies/ai-assisted-quality-engineering/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="AI-Assisted Quality Engineering Case Study — Saumen Biswas">
+    <meta property="og:description" content="How Saumen Biswas combined intelligent test selection, reliability signals, and guarded self-healing automation to improve CI feedback and reduce flaky failures.">
+    <meta property="og:url" content="https://saubiswa1.github.io/saumen-website/case-studies/ai-assisted-quality-engineering/">
+    <meta property="og:site_name" content="Saumen Biswas">
+    <meta property="og:image" content="https://saubiswa1.github.io/saumen-website/og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Saumen Biswas — Quality engineering systems that make impact measurable.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI-Assisted Quality Engineering Case Study — Saumen Biswas">
+    <meta name="twitter:description" content="How Saumen Biswas combined intelligent test selection, reliability signals, and guarded self-healing automation to improve CI feedback and reduce flaky failures.">
+    <meta name="twitter:image" content="https://saubiswa1.github.io/saumen-website/og.jpg">
+    <title>AI-Assisted Quality Engineering Case Study — Saumen Biswas</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "AI-assisted quality engineering that made CI feedback faster and more trustworthy",
+        "description": "How Saumen Biswas combined intelligent test selection, reliability signals, and guarded self-healing automation to improve CI feedback and reduce flaky failures.",
+        "url": "https://saubiswa1.github.io/saumen-website/case-studies/ai-assisted-quality-engineering/",
+        "image": "https://saubiswa1.github.io/saumen-website/og.jpg",
+        "author": {
+            "@type": "Person",
+            "name": "Saumen Biswas",
+            "url": "https://saubiswa1.github.io/saumen-website/"
+        }
+    }
+    </script>
+</head>
+<body class="case-study-body">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header" id="site-header">
+        <div class="nav-shell">
+            <a class="brand" href="../../" aria-label="Saumen Biswas home">
+                <span class="brand-mark" aria-hidden="true">SB</span>
+                <span>Saumen Biswas</span>
+            </a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+                <span class="sr-only">Toggle navigation</span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
+            <nav id="primary-nav" aria-label="Primary navigation">
+                <a href="../../#work">Work</a>
+                <a href="../../#writing">Writing &amp; talks</a>
+                <a href="../../#recognition">Recognition</a>
+                <a href="../../#about">About</a>
+            </nav>
+            <a class="header-cta" href="mailto:saubiswa1@gmail.com">Let’s talk</a>
+        </div>
+    </header>
+
+    <main id="main-content" class="case-study-main">
+        <section class="case-study-hero shell">
+            <a class="case-study-back" href="../../#work"><span aria-hidden="true">←</span> Selected work</a>
+            <div class="case-study-hero-grid">
+                <div class="reveal">
+                    <p class="section-kicker">Case study · AI-assisted quality engineering</p>
+                    <h1>Faster CI feedback without trading away trust.</h1>
+                    <p class="case-study-lede">A public-safe account of how intelligent test selection, reliability signals, and guarded self-healing made a large automation system faster, more stable, and easier for engineering teams to trust.</p>
+                </div>
+                <dl class="case-study-metrics reveal" aria-label="Selected outcomes">
+                    <div><dt>60%</dt><dd>faster CI feedback</dd></div>
+                    <div><dt>73%</dt><dd>fewer flaky failures</dd></div>
+                    <div><dt>18</dt><dd>engineering teams supported</dd></div>
+                </dl>
+            </div>
+            <p class="case-study-disclaimer reveal">Representative, portfolio-safe summary. Company-specific data, architecture, and implementation details are intentionally omitted.</p>
+        </section>
+
+        <section class="case-study-section shell reveal" aria-labelledby="context-title">
+            <div class="case-study-section-label"><span>01</span><p>Context</p></div>
+            <div class="case-study-prose">
+                <h2 id="context-title">The test suite was growing faster than the feedback loop.</h2>
+                <p>As the product and automation surface expanded, every pull request carried a growing verification cost. Broad regression runs slowed developer feedback, while flaky failures consumed triage time and weakened confidence in the signal.</p>
+                <p>The challenge was not simply to run fewer tests. It was to make a defensible decision about which tests mattered for each change, preserve meaningful coverage, and improve reliability without allowing automation to conceal genuine defects.</p>
+                <div class="case-study-facts">
+                    <div><span>Role</span><strong>Technical lead and system architect</strong></div>
+                    <div><span>Focus</span><strong>Selection, stability, observability, adoption</strong></div>
+                    <div><span>Environment</span><strong>Large-scale cloud-native fintech platform</strong></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-study-section case-study-section-tinted reveal" aria-labelledby="approach-title">
+            <div class="shell case-study-section-inner">
+                <div class="case-study-section-label"><span>02</span><p>Approach</p></div>
+                <div class="case-study-prose">
+                    <h2 id="approach-title">Treat selection and healing as governed engineering systems.</h2>
+                    <p>The solution combined change context, historical execution behavior, test ownership, and reliability data. Selection produced a risk-aware test set for each change, while clear fallbacks protected coverage when confidence was insufficient.</p>
+                    <ol class="system-flow" aria-label="Quality intelligence workflow">
+                        <li><span>1</span><div><strong>Understand the change</strong><p>Collect code, dependency, ownership, and execution context.</p></div></li>
+                        <li><span>2</span><div><strong>Prioritize by risk</strong><p>Rank relevant tests using impact and historical signals.</p></div></li>
+                        <li><span>3</span><div><strong>Execute with guardrails</strong><p>Apply deterministic fallbacks and restrict automated healing to reviewable cases.</p></div></li>
+                        <li><span>4</span><div><strong>Learn from outcomes</strong><p>Feed execution, failure, and triage evidence back into the system.</p></div></li>
+                    </ol>
+                    <p>Self-healing was deliberately constrained. The system could assist with diagnosis and safe maintenance patterns, but it could not silently rewrite intent or convert an unexplained failure into a pass.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-study-section shell reveal" aria-labelledby="decisions-title">
+            <div class="case-study-section-label"><span>03</span><p>Key decisions</p></div>
+            <div class="case-study-prose">
+                <h2 id="decisions-title">Optimize for adoption and explainability—not only speed.</h2>
+                <div class="decision-grid">
+                    <article><h3>Coverage before compression</h3><p>Selection confidence thresholds and broad-run fallbacks protected high-risk changes.</p></article>
+                    <article><h3>Reliability as product work</h3><p>Flake ownership, telemetry, and triage workflows were designed into the platform rather than handled as cleanup.</p></article>
+                    <article><h3>Humans retain judgment</h3><p>AI-assisted workflows summarized evidence and proposed actions; engineers retained control over behavioral changes.</p></article>
+                    <article><h3>Evidence earns trust</h3><p>Dashboards exposed why tests were selected, what was skipped, and how the system performed over time.</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-study-results reveal" aria-labelledby="results-title">
+            <div class="shell case-study-results-grid">
+                <div>
+                    <p class="section-kicker">Measured impact</p>
+                    <h2 id="results-title">A faster signal engineers could believe.</h2>
+                </div>
+                <div class="case-study-result-list">
+                    <p><strong>60% faster CI feedback</strong><span>by focusing execution on change-relevant risk while preserving fallback coverage.</span></p>
+                    <p><strong>73% fewer flaky failures</strong><span>through reliability ownership, diagnosis signals, and controlled maintenance workflows.</span></p>
+                    <p><strong>Broader platform adoption</strong><span>through reusable patterns, visible evidence, and mentoring across 18 engineering teams.</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-study-section shell reveal" aria-labelledby="reflection-title">
+            <div class="case-study-section-label"><span>04</span><p>What this demonstrates</p></div>
+            <div class="case-study-prose">
+                <h2 id="reflection-title">Quality intelligence succeeds when teams trust the operating model.</h2>
+                <p>The technical model mattered, but durable impact came from pairing it with transparent decision rules, ownership, observability, and engineering education. The result was not a one-off optimization; it was a reusable quality capability.</p>
+                <ul class="case-study-tags" aria-label="Capabilities demonstrated">
+                    <li>Python</li><li>Playwright</li><li>pytest</li><li>CI/CD</li><li>AI-assisted testing</li><li>Observability</li><li>Technical leadership</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="case-study-cta">
+            <div class="shell case-study-cta-inner reveal">
+                <div><p class="section-kicker">For recruiters and hiring leaders</p><h2>Building a quality platform that needs stronger signal and scale?</h2></div>
+                <div><p>I’m open to Staff and Lead SDET or Quality Engineering opportunities where platform thinking and AI-assisted workflows can create measurable leverage.</p><div class="contact-buttons"><a class="button button-primary" href="../../Saumen-Biswas-Resume.pdf" download>Download my résumé</a><a class="button button-secondary" href="mailto:saubiswa1@gmail.com?subject=20-minute%20recruiter%20conversation">Schedule 20 minutes</a></div></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="shell footer-layout"><p>© <span id="year">2026</span> Saumen Biswas</p><p>Quality engineering · Reliability · Engineering intelligence</p><a href="../predictive-engineering-metrics/">Next case study →</a></div>
+    </footer>
+    <script src="../../script.js" defer></script>
+</body>
+</html>

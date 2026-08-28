@@ -167,6 +167,8 @@ node_modules/
 # Generated from root assets for Vinext/Sites
 public/og.jpg
 public/Saumen-Biswas-Resume.pdf
+public/sitemap.xml
+public/robots.txt
 
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can

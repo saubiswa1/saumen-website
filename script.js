@@ -2,6 +2,7 @@ const header = document.querySelector("#site-header");
 const menuToggle = document.querySelector(".menu-toggle");
 const primaryNav = document.querySelector("#primary-nav");
 const year = document.querySelector("#year");
+const contactForms = document.querySelectorAll("[data-contact-form]");
 
 if (year) {
     year.textContent = String(new Date().getFullYear());
@@ -50,3 +51,28 @@ if ("IntersectionObserver" in window) {
 } else {
     revealItems.forEach((item) => item.classList.add("is-visible"));
 }
+
+contactForms.forEach((form) => {
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const data = new FormData(form);
+        const name = String(data.get("name") || "").trim();
+        const email = String(data.get("email") || "").trim();
+        const companyRole = String(data.get("companyRole") || "").trim();
+        const message = String(data.get("message") || "").trim();
+        const subject = companyRole
+            ? `Website introduction — ${companyRole}`
+            : `Website introduction from ${name}`;
+        const body = [
+            `Name: ${name}`,
+            `Email: ${email}`,
+            companyRole ? `Company / role: ${companyRole}` : "",
+            "",
+            message,
+        ].filter(Boolean).join("\n");
+        const status = form.querySelector("[data-contact-status]");
+
+        if (status) status.textContent = "Opening your email app…";
+        window.location.href = `mailto:saubiswa1@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+});
