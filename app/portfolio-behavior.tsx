@@ -4,8 +4,6 @@ import { useEffect } from 'react';
 
 export default function PortfolioBehavior() {
   useEffect(() => {
-    document.documentElement.classList.add('has-js');
-
     const header = document.querySelector('#site-header');
     const menuToggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
     const primaryNav = document.querySelector('#primary-nav');

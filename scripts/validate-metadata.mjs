@@ -11,6 +11,7 @@ const escapeHtml = (value) => value
   .replaceAll('>', '&gt;');
 
 const requiredHeadMarkup = [
+  `<script>${siteMetadata.earlyEnhancementScript}</script>`,
   `<meta name="description" content="${escapeHtml(siteMetadata.description)}">`,
   `<meta name="author" content="${escapeHtml(siteMetadata.author)}">`,
   `<meta name="theme-color" content="${siteMetadata.themeColor}">`,
