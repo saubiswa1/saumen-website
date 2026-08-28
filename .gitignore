@@ -164,8 +164,9 @@ node_modules/
 .wrangler/
 *.tsbuildinfo
 
-# Generated from the root social card for Vinext/Sites
+# Generated from root assets for Vinext/Sites
 public/og.jpg
+public/Saumen-Biswas-Resume.pdf
 
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can

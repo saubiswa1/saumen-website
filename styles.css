@@ -1127,9 +1127,27 @@ a {
     font-size: 1.05rem;
 }
 
+.contact-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin-top: 1.5rem;
+}
+
 .contact-action .button-primary {
     color: var(--ink);
     background: var(--navy-950);
+}
+
+.contact-action .button-secondary {
+    color: var(--navy-950);
+    border-color: rgba(7, 17, 31, 0.4);
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.contact-action .button-secondary:hover {
+    border-color: var(--navy-950);
+    background: rgba(255, 255, 255, 0.35);
 }
 
 .site-footer {
