@@ -12,19 +12,19 @@ export const caseStudies = {
   aiAssistedQuality: caseStudy(
     'ai-assisted-quality-engineering',
     'AI-assisted quality engineering that made CI feedback faster and more trustworthy',
-    'AI-Assisted Quality Engineering Case Study — Saumen Biswas',
-    'How Saumen Biswas combined intelligent test selection, reliability signals, and guarded self-healing automation to improve CI feedback and reduce flaky failures.',
+    'AI-Assisted CI Quality: 60% Faster Feedback — Case Study',
+    'See how Saumen Biswas used intelligent test selection, reliability scoring, and guarded self-healing to cut CI feedback time by 60% and reduce flaky failures.',
   ),
   predictiveMetrics: caseStudy(
     'predictive-engineering-metrics',
     'Engineering intelligence that turned delivery data into earlier decisions',
-    'Predictive Engineering Metrics Case Study — Saumen Biswas',
-    'How Saumen Biswas designed engineering-quality analytics across 1,000+ repositories and 5,000–8,000 daily pull requests with reliable, decision-ready signals.',
+    'Predictive Metrics Across 1,000+ Repositories — Case Study',
+    'See how Saumen Biswas turned signals from 1,000+ repositories and 5,000–8,000 daily pull requests into earlier, decision-ready engineering insights.',
   ),
   globalPayments: caseStudy(
     'global-payments-quality',
     'Quality engineering for high-scale global payment platforms',
-    'Global Payments Quality Engineering Case Study — Saumen Biswas',
-    'How Saumen Biswas led quality and release engineering for complex global payment initiatives, including Apple Pay, reusable regression intelligence, and continuous validation.',
+    'Global Payments Quality and Apple Pay — Case Study',
+    'See how Saumen Biswas led quality engineering for global payments, including Apple Pay, regression intelligence, and continuous release validation.',
   ),
 };
