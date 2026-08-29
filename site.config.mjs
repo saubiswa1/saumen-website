@@ -21,6 +21,7 @@ export const siteMetadata = {
       'https://www.linkedin.com/in/saumenbiswas/',
       'https://scholar.google.com/citations?user=W8Wj0fwAAAAJ&hl=en',
       'https://orcid.org/0009-0004-1491-9293',
+      'https://www.researchgate.net/profile/Saumen-Biswas',
     ],
     knowsAbout: [
       'Quality Engineering',
