@@ -9,6 +9,7 @@ export const siteMetadata = {
   socialImageAlt: 'Saumen Biswas — Quality engineering systems that make impact measurable.',
   themeColor: '#07111f',
   author: 'Saumen Biswas',
+  googleSiteVerification: '3MpL5MVImg4yaGog_-Ldq-abdqxi_bIR4ew_NDiibhg',
   earlyEnhancementScript: 'document.documentElement.classList.add("has-js")',
   personSchema: {
     '@context': 'https://schema.org',

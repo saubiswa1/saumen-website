@@ -15,6 +15,7 @@ const requiredHeadMarkup = [
   `<script>${siteMetadata.earlyEnhancementScript}</script>`,
   `<meta name="description" content="${escapeHtml(siteMetadata.description)}">`,
   `<meta name="author" content="${escapeHtml(siteMetadata.author)}">`,
+  `<meta name="google-site-verification" content="${siteMetadata.googleSiteVerification}">`,
   `<meta name="theme-color" content="${siteMetadata.themeColor}">`,
   `<link rel="canonical" href="${siteMetadata.canonicalUrl}">`,
   `<meta property="og:title" content="${escapeHtml(siteMetadata.title)}">`,

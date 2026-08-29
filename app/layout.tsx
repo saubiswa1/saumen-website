@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: siteMetadata.title,
   description: siteMetadata.description,
   authors: [{ name: siteMetadata.author }],
+  verification: { google: siteMetadata.googleSiteVerification },
   alternates: { canonical: siteMetadata.canonicalUrl },
   openGraph: {
     type: 'website',
