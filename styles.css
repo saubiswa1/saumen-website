@@ -718,6 +718,20 @@ a {
     color: var(--cyan);
 }
 
+.publication-row h3 .publication-doi {
+    display: block;
+    width: fit-content;
+    margin-top: 0.55rem;
+    color: var(--cyan);
+    font-family: var(--font-mono);
+    font-size: 0.67rem;
+    font-weight: 700;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+    text-transform: uppercase;
+    letter-spacing: 0.035em;
+}
+
 .list-cta {
     margin-block: 1.5rem 0;
 }
