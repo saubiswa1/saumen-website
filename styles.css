@@ -718,6 +718,16 @@ a {
     color: var(--cyan);
 }
 
+.publication-citation {
+    display: block;
+    margin-top: 0.45rem;
+    color: var(--muted);
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 500;
+    line-height: 1.55;
+}
+
 .publication-row h3 .publication-doi {
     display: block;
     width: fit-content;
