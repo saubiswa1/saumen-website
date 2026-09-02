@@ -1,4 +1,139 @@
 const canonicalUrl = 'https://saubiswa1.github.io/saumen-website/';
+const personId = `${canonicalUrl}#saumen-biswas`;
+
+const authorIdentity = {
+  '@type': 'Person',
+  '@id': personId,
+  name: 'Saumen Biswas',
+  url: canonicalUrl,
+  sameAs: [
+    'https://www.linkedin.com/in/saumenbiswas/',
+    'https://scholar.google.com/citations?user=W8Wj0fwAAAAJ&hl=en',
+    'https://orcid.org/0009-0004-1491-9293',
+    'https://www.researchgate.net/profile/Saumen-Biswas',
+  ],
+};
+
+const doiIdentifier = (doi) => ({
+  '@type': 'PropertyValue',
+  propertyID: 'DOI',
+  value: doi,
+  url: `https://doi.org/${doi}`,
+});
+
+const journalArticle = ({ slug, headline, datePublished, url, journal, publisher, volume, issue, pages, doi }) => ({
+  '@context': 'https://schema.org',
+  '@type': 'ScholarlyArticle',
+  '@id': `${canonicalUrl}#publication-${slug}`,
+  headline,
+  datePublished,
+  url,
+  mainEntityOfPage: canonicalUrl,
+  author: { '@id': personId },
+  publisher: {
+    '@type': 'Organization',
+    name: publisher,
+  },
+  isPartOf: {
+    '@type': 'Periodical',
+    name: journal,
+  },
+  volumeNumber: volume,
+  issueNumber: issue,
+  pagination: pages,
+  ...(doi ? {
+    identifier: doiIdentifier(doi),
+    sameAs: `https://doi.org/${doi}`,
+  } : {}),
+});
+
+export const publicationSchemas = [
+  journalArticle({
+    slug: 'atom-adaptive-test-optimization',
+    headline: 'ATOM: Adaptive Test Optimization through Multi-objective Learning and Explainable AI',
+    datePublished: '2026-03',
+    url: 'https://www.ijmra.us/project%20doc/2026/IJESR_MARCH2026/IJESR2March26.pdf',
+    journal: 'International Journal of Engineering & Scientific Research',
+    publisher: 'International Journals of Multidisciplinary Research Academy (IJMRA)',
+    volume: '14',
+    issue: '3',
+    pages: '8-16',
+  }),
+  journalArticle({
+    slug: 'ai-assisted-self-healing',
+    headline: 'Enhancing End-to-End Test Stability Through AI-Assisted Self-Healing: A Case Study of Playwright Healer Agent Implementation',
+    datePublished: '2026-01',
+    url: 'https://www.ijmra.us/project%20doc/2026/IJESR_JANUARY2026/IJESR1_Jan26.pdf',
+    journal: 'International Journal of Engineering & Scientific Research',
+    publisher: 'International Journals of Multidisciplinary Research Academy (IJMRA)',
+    volume: '14',
+    issue: '1',
+    pages: '1-12',
+  }),
+  journalArticle({
+    slug: 'machine-learning-automation-testing',
+    headline: 'Leveraging Machine Learning for Enhanced Automation Testing',
+    datePublished: '2025-02',
+    url: 'https://www.ijcttjournal.org/2025/Volume-73%20Issue-2/IJCTT-V73I2P107.pdf',
+    journal: 'International Journal of Computer Trends and Technology',
+    publisher: 'Seventh Sense Research Group (SSRG)',
+    volume: '73',
+    issue: '2',
+    pages: '58-63',
+    doi: '10.14445/22312803/IJCTT-V73I2P107',
+  }),
+  journalArticle({
+    slug: 'predictive-engineering-metrics',
+    headline: 'Predictive Metrics: Transforming Engineering Productivity and Software Quality',
+    datePublished: '2025-01',
+    url: 'https://www.ijcttjournal.org/2025/Volume-73%20Issue-1/IJCTT-V73I1P106.pdf',
+    journal: 'International Journal of Computer Trends and Technology',
+    publisher: 'Seventh Sense Research Group (SSRG)',
+    volume: '73',
+    issue: '1',
+    pages: '51-56',
+    doi: '10.14445/22312803/IJCTT-V73I1P106',
+  }),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    '@id': `${canonicalUrl}#publication-change-failure-rate-monitoring`,
+    headline: 'Engineering Resilience Through Data: A Comprehensive Approach to Change Failure Rate Monitoring',
+    datePublished: '2025-06-12',
+    url: 'https://dzone.com/articles/engineering-resilience-data-cfr-monitoring',
+    mainEntityOfPage: canonicalUrl,
+    author: { '@id': personId },
+    publisher: {
+      '@type': 'Organization',
+      name: 'DZone',
+      url: 'https://dzone.com/',
+    },
+  },
+  journalArticle({
+    slug: 'datadog-observability-monitoring',
+    headline: 'Comprehensive Observability and Monitoring Strategies Using Datadog',
+    datePublished: '2025-04',
+    url: 'https://www.ijmra.us/project%20doc/2025/IJME_APRIL2025/IJMIE3April25.pdf',
+    journal: 'International Journal of Management, IT & Engineering',
+    publisher: 'International Journals of Multidisciplinary Research Academy (IJMRA)',
+    volume: '15',
+    issue: '4',
+    pages: '15-21',
+    doi: '10.2139/ssrn.5193639',
+  }),
+  journalArticle({
+    slug: 'strategic-cloud-cost-management',
+    headline: 'Strategic Cost Management for Cloud-Native Software Development: A Technical Program Manager’s Guide',
+    datePublished: '2025-02',
+    url: 'https://www.ijmra.us/project%20doc/2025/IJME_FEBRUARY2025/IJMIE4Feb25.pdf',
+    journal: 'International Journal of Management, IT & Engineering',
+    publisher: 'International Journals of Multidisciplinary Research Academy (IJMRA)',
+    volume: '15',
+    issue: '2',
+    pages: '16-22',
+    doi: '10.2139/ssrn.5167381',
+  }),
+];
 
 export const siteMetadata = {
   canonicalUrl,
@@ -14,15 +149,11 @@ export const siteMetadata = {
   personSchema: {
     '@context': 'https://schema.org',
     '@type': 'Person',
+    '@id': personId,
     name: 'Saumen Biswas',
     jobTitle: 'Senior SDET and GenAI Quality Engineering Leader',
     url: canonicalUrl,
-    sameAs: [
-      'https://www.linkedin.com/in/saumenbiswas/',
-      'https://scholar.google.com/citations?user=W8Wj0fwAAAAJ&hl=en',
-      'https://orcid.org/0009-0004-1491-9293',
-      'https://www.researchgate.net/profile/Saumen-Biswas',
-    ],
+    sameAs: authorIdentity.sameAs,
     knowsAbout: [
       'Quality Engineering',
       'Test Automation',

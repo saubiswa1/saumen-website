@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { caseStudies } from '../case-studies.config.mjs';
-import { siteMetadata } from '../site.config.mjs';
+import { publicationSchemas, siteMetadata } from '../site.config.mjs';
 
 const html = await readFile(new URL('../index.html', import.meta.url), 'utf8');
 
@@ -33,9 +33,13 @@ for (const markup of requiredHeadMarkup) {
   assert.ok(html.includes(markup), `Static metadata is out of sync: ${markup}`);
 }
 
-const jsonLdMatch = html.match(/<script type="application\/ld\+json">\s*([\s\S]*?)\s*<\/script>/);
-assert.ok(jsonLdMatch, 'Static Person JSON-LD is missing');
-assert.deepEqual(JSON.parse(jsonLdMatch[1]), siteMetadata.personSchema, 'Static Person JSON-LD is out of sync');
+const jsonLdMatches = [...html.matchAll(/<script type="application\/ld\+json">\s*([\s\S]*?)\s*<\/script>/g)];
+assert.equal(jsonLdMatches.length, 2, 'Homepage must include Person and publication JSON-LD');
+assert.deepEqual(JSON.parse(jsonLdMatches[0][1]), siteMetadata.personSchema, 'Static Person JSON-LD is out of sync');
+assert.deepEqual(JSON.parse(jsonLdMatches[1][1]), publicationSchemas, 'Static publication JSON-LD is out of sync');
+assert.equal(publicationSchemas.length, 7, 'All seven listed works must have structured data');
+assert.equal(publicationSchemas.filter((article) => article['@type'] === 'ScholarlyArticle').length, 6, 'Six research works must use ScholarlyArticle');
+assert.equal(publicationSchemas.filter((article) => article.identifier?.propertyID === 'DOI').length, 4, 'All four verified DOI records must be present');
 
 for (const study of Object.values(caseStudies)) {
   const caseStudyHtml = await readFile(
